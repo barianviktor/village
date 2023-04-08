@@ -1,6 +1,5 @@
-import { ActionType } from "../action-types/index";
-
-interface DepositAction {
+import { Action } from "./resourceActions.interfaces";
+/* interface DepositAction {
   type: ActionType.DEPOSIT;
   payload: number;
 }
@@ -14,4 +13,6 @@ interface BankruptAction {
   type: ActionType.BANKRUPT;
 }
 
-export type Action = DepositAction | WithdrawAction | BankruptAction;
+export type Action = DepositAction | WithdrawAction | BankruptAction; */
+
+export type ResourceAction = Action;
