@@ -10,13 +10,13 @@ export interface RemoveCurrencyAction {
   payload: number;
 }
 
-export interface AddCurrencyPerMinuteAction {
-  type: ActionType.ADD_CURRENCY_PER_MINUTE;
+export interface AddCurrencyPerTurnAction {
+  type: ActionType.ADD_CURRENCY_PER_TURN;
   payload: number;
 }
 
-export interface RemoveCurrencyPerMinuteAction {
-  type: ActionType.REMOVE_CURRENCY_PER_MINUTE;
+export interface RemoveCurrencyPerTurnAction {
+  type: ActionType.REMOVE_CURRENCY_PER_TURN;
   payload: number;
 }
 
@@ -40,13 +40,13 @@ export interface RemoveMealAction {
   payload: number;
 }
 
-export interface AddMealPerMinuteAction {
-  type: ActionType.ADD_MEAL_PER_MINUTE;
+export interface AddMealPerTurnAction {
+  type: ActionType.ADD_MEAL_PER_TURN;
   payload: number;
 }
 
-export interface RemoveMealPerMinuteAction {
-  type: ActionType.REMOVE_MEAL_PER_MINUTE;
+export interface RemoveMealPerTurnAction {
+  type: ActionType.REMOVE_MEAL_PER_TURN;
   payload: number;
 }
 
@@ -60,28 +60,28 @@ export interface RemoveWoodAction {
   payload: number;
 }
 
-export interface AddWoodPerMinuteAction {
-  type: ActionType.ADD_WOOD_PER_MINUTE;
+export interface AddWoodPerTurnAction {
+  type: ActionType.ADD_WOOD_PER_TURN;
   payload: number;
 }
 
-export interface RemoveWoodPerMinuteAction {
-  type: ActionType.REMOVE_WOOD_PER_MINUTE;
+export interface RemoveWoodPerTurnAction {
+  type: ActionType.REMOVE_WOOD_PER_TURN;
   payload: number;
 }
 
 export type Action =
   | AddCurrencyAction
   | RemoveCurrencyAction
-  | AddCurrencyPerMinuteAction
-  | RemoveCurrencyPerMinuteAction
+  | AddCurrencyPerTurnAction
+  | RemoveCurrencyPerTurnAction
   | AddHousingAction
   | RemoveHousingAction
   | AddMealAction
   | RemoveMealAction
-  | AddMealPerMinuteAction
-  | RemoveMealPerMinuteAction
+  | AddMealPerTurnAction
+  | RemoveMealPerTurnAction
   | AddWoodAction
   | RemoveWoodAction
-  | AddWoodPerMinuteAction
-  | RemoveWoodPerMinuteAction;
+  | AddWoodPerTurnAction
+  | RemoveWoodPerTurnAction;

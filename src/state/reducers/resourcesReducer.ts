@@ -1,5 +1,5 @@
 import { ActionType } from "../action-types/index";
-import { ResourceAction } from "../actions";
+import { Action } from "../actions/resourceActions.interfaces";
 import { ResourcesState } from "./resourcesState.interface";
 
 const initialState: ResourcesState = {
@@ -7,14 +7,14 @@ const initialState: ResourcesState = {
   wood: 0,
   housing: 0,
   currency: 0,
-  mealsPerMinute: 0,
-  woodPerMinute: 0,
-  currencyPerMinute: 0,
+  mealsPerTurn: 0,
+  woodPerTurn: 0,
+  currencyPerTurn: 0,
 };
 
 const resourcesReducer = (
   state: ResourcesState = initialState,
-  action: ResourceAction
+  action: Action
 ): ResourcesState => {
   switch (action.type) {
     //handle housing
@@ -40,15 +40,15 @@ const resourcesReducer = (
         ...state,
         currency: state.currency - action.payload,
       };
-    case ActionType.ADD_CURRENCY_PER_MINUTE:
+    case ActionType.ADD_CURRENCY_PER_TURN:
       return {
         ...state,
-        currencyPerMinute: state.currencyPerMinute + action.payload,
+        currencyPerTurn: state.currencyPerTurn + action.payload,
       };
-    case ActionType.REMOVE_CURRENCY_PER_MINUTE:
+    case ActionType.REMOVE_CURRENCY_PER_TURN:
       return {
         ...state,
-        currencyPerMinute: state.currencyPerMinute + action.payload,
+        currencyPerTurn: state.currencyPerTurn + action.payload,
       };
     //handle meals
     case ActionType.ADD_MEAL:
@@ -61,15 +61,15 @@ const resourcesReducer = (
         ...state,
         meals: state.meals - action.payload,
       };
-    case ActionType.ADD_MEAL_PER_MINUTE:
+    case ActionType.ADD_MEAL_PER_TURN:
       return {
         ...state,
-        mealsPerMinute: state.mealsPerMinute + action.payload,
+        mealsPerTurn: state.mealsPerTurn + action.payload,
       };
-    case ActionType.REMOVE_MEAL_PER_MINUTE:
+    case ActionType.REMOVE_MEAL_PER_TURN:
       return {
         ...state,
-        mealsPerMinute: state.mealsPerMinute - action.payload,
+        mealsPerTurn: state.mealsPerTurn - action.payload,
       };
     //handle wood
     case ActionType.ADD_WOOD:
@@ -82,15 +82,15 @@ const resourcesReducer = (
         ...state,
         wood: state.wood - action.payload,
       };
-    case ActionType.ADD_WOOD_PER_MINUTE:
+    case ActionType.ADD_WOOD_PER_TURN:
       return {
         ...state,
-        woodPerMinute: state.woodPerMinute + action.payload,
+        woodPerTurn: state.woodPerTurn + action.payload,
       };
-    case ActionType.REMOVE_WOOD_PER_MINUTE:
+    case ActionType.REMOVE_WOOD_PER_TURN:
       return {
         ...state,
-        woodPerMinute: state.woodPerMinute - action.payload,
+        woodPerTurn: state.woodPerTurn - action.payload,
       };
 
     default:

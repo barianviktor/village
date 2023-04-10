@@ -1,123 +1,144 @@
+import { Dispatch } from "react";
 import { ActionType } from "../action-types/index";
 import {
   AddCurrencyAction,
-  AddCurrencyPerMinuteAction,
+  AddCurrencyPerTurnAction,
   AddHousingAction,
   AddMealAction,
-  AddMealPerMinuteAction,
+  AddMealPerTurnAction,
   AddWoodAction,
-  AddWoodPerMinuteAction,
+  AddWoodPerTurnAction,
   RemoveCurrencyAction,
-  RemoveCurrencyPerMinuteAction,
+  RemoveCurrencyPerTurnAction,
   RemoveHousingAction,
   RemoveMealAction,
-  RemoveMealPerMinuteAction,
+  RemoveMealPerTurnAction,
   RemoveWoodAction,
-  RemoveWoodPerMinuteAction,
+  RemoveWoodPerTurnAction,
 } from "./resourceActions.interfaces";
 
-export const addCurrency = (amount: number): AddCurrencyAction => {
-  return {
-    type: ActionType.ADD_CURRENCY,
-    payload: amount,
+export const addCurrency = (amount: number) => {
+  return (dispatch: Dispatch<AddCurrencyAction>) => {
+    dispatch({
+      type: ActionType.ADD_CURRENCY,
+      payload: amount,
+    });
   };
 };
 
-export const removeCurrency = (amount: number): RemoveCurrencyAction => {
-  return {
-    type: ActionType.REMOVE_CURRENCY,
-    payload: amount,
+export const removeCurrency = (amount: number) => {
+  return (dispatch: Dispatch<RemoveCurrencyAction>) => {
+    dispatch({
+      type: ActionType.REMOVE_CURRENCY,
+      payload: amount,
+    });
   };
 };
 
-export const addCurrencyPerMinute = (
-  amount: number
-): AddCurrencyPerMinuteAction => {
-  return {
-    type: ActionType.ADD_CURRENCY_PER_MINUTE,
-    payload: amount,
+export const addCurrencyPerTurn = (amount: number) => {
+  return (dispatch: Dispatch<AddCurrencyPerTurnAction>) => {
+    dispatch({
+      type: ActionType.ADD_CURRENCY_PER_TURN,
+      payload: amount,
+    });
   };
 };
 
-export const removeCurrencyPerMinute = (
-  amount: number
-): RemoveCurrencyPerMinuteAction => {
-  return {
-    type: ActionType.REMOVE_CURRENCY_PER_MINUTE,
-    payload: amount,
+export const removeCurrencyPerTurn = (amount: number) => {
+  return (dispatch: Dispatch<RemoveCurrencyPerTurnAction>) => {
+    dispatch({
+      type: ActionType.REMOVE_CURRENCY_PER_TURN,
+      payload: amount,
+    });
   };
 };
 
-export const addHousing = (amount: number): AddHousingAction => {
-  return {
-    type: ActionType.ADD_HOUSING,
-    payload: amount,
+export const addHousing = (amount: number) => {
+  return (dispatch: Dispatch<AddHousingAction>) => {
+    dispatch({
+      type: ActionType.ADD_HOUSING,
+      payload: amount,
+    });
   };
 };
 
-export const removeHousing = (amount: number): RemoveHousingAction => {
-  return {
-    type: ActionType.REMOVE_HOUSING,
-    payload: amount,
+export const removeHousing = (amount: number) => {
+  return (dispatch: Dispatch<RemoveHousingAction>) => {
+    dispatch({
+      type: ActionType.REMOVE_HOUSING,
+      payload: amount,
+    });
   };
 };
 
-export const addMeal = (amount: number): AddMealAction => {
-  return {
-    type: ActionType.ADD_MEAL,
-    payload: amount,
+export const addMeal = (amount: number) => {
+  return (dispatch: Dispatch<AddMealAction>) => {
+    dispatch({
+      type: ActionType.ADD_MEAL,
+      payload: amount,
+    });
   };
 };
 
-export const removeMeal = (amount: number): RemoveMealAction => {
-  return {
-    type: ActionType.REMOVE_MEAL,
-    payload: amount,
+export const removeMeal = (amount: number) => {
+  return (dispatch: Dispatch<RemoveMealAction>) => {
+    dispatch({
+      type: ActionType.REMOVE_MEAL,
+      payload: amount,
+    });
   };
 };
 
-export const addMealPerMinute = (amount: number): AddMealPerMinuteAction => {
-  return {
-    type: ActionType.ADD_MEAL_PER_MINUTE,
-    payload: amount,
+export const addMealPerTurn = (amount: number) => {
+  return (dispatch: Dispatch<AddMealPerTurnAction>) => {
+    dispatch({
+      type: ActionType.ADD_MEAL_PER_TURN,
+      payload: amount,
+    });
   };
 };
 
-export const removeMealPerMinute = (
-  amount: number
-): RemoveMealPerMinuteAction => {
-  return {
-    type: ActionType.REMOVE_MEAL_PER_MINUTE,
-    payload: amount,
+export const removeMealPerTurn = (amount: number) => {
+  return (dispatch: Dispatch<RemoveMealPerTurnAction>) => {
+    dispatch({
+      type: ActionType.REMOVE_MEAL_PER_TURN,
+      payload: amount,
+    });
   };
 };
 
-export const addWood = (amount: number): AddWoodAction => {
-  return {
-    type: ActionType.ADD_WOOD,
-    payload: amount,
+export const addWood = (amount: number) => {
+  return (dispatch: Dispatch<AddWoodAction>) => {
+    dispatch({
+      type: ActionType.ADD_WOOD,
+      payload: amount,
+    });
   };
 };
 
-export const removeWood = (amount: number): RemoveWoodAction => {
-  return {
-    type: ActionType.REMOVE_WOOD,
-    payload: amount,
+export const removeWood = (amount: number) => {
+  return (dispatch: Dispatch<RemoveWoodAction>) => {
+    dispatch({
+      type: ActionType.REMOVE_WOOD,
+      payload: amount,
+    });
   };
 };
 
-export const addWoodPerMinute = (amount: number): AddWoodPerMinuteAction => {
-  return {
-    type: ActionType.ADD_WOOD_PER_MINUTE,
-    payload: amount,
+export const addWoodPerTurn = (amount: number) => {
+  return (dispatch: Dispatch<AddWoodPerTurnAction>) => {
+    dispatch({
+      type: ActionType.ADD_WOOD_PER_TURN,
+      payload: amount,
+    });
   };
 };
 
-export const removeWoodPerMinute = (
-  amount: number
-): RemoveWoodPerMinuteAction => {
-  return {
-    type: ActionType.REMOVE_WOOD_PER_MINUTE,
-    payload: amount,
+export const removeWoodPerTurn = (amount: number) => {
+  return (dispatch: Dispatch<RemoveWoodPerTurnAction>) => {
+    dispatch({
+      type: ActionType.REMOVE_WOOD_PER_TURN,
+      payload: amount,
+    });
   };
 };

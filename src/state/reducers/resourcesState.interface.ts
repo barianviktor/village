@@ -3,7 +3,7 @@ export interface ResourcesState {
   wood: number;
   housing: number;
   currency: number;
-  mealsPerMinute: number;
-  woodPerMinute: number;
-  currencyPerMinute: number;
+  mealsPerTurn: number;
+  woodPerTurn: number;
+  currencyPerTurn: number;
 }
