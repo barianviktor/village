@@ -1,3 +1,4 @@
+import { Field } from "../../interfaces/Field";
 import { ActionType } from "../action-types";
 
 export interface IncreaseGameTimeAction {
@@ -16,11 +17,17 @@ export interface SetGameLanguageAction {
 
 export interface SetGameThemeAction {
   type: ActionType.SET_THEME;
-  payload: "light" | "dark";
+  payload: string;
+}
+
+export interface GenerateFieldAction {
+  type: ActionType.GENERATE_FIELD;
+  payload: Field;
 }
 
 export type Action =
   | IncreaseGameTimeAction
   | SetGameTimeAction
   | SetGameLanguageAction
-  | SetGameThemeAction;
+  | SetGameThemeAction
+  | GenerateFieldAction;

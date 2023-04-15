@@ -13,6 +13,7 @@ import "./assets/slideTransitions.scss";
 import IconButton from "./components/shared/icon-button/icon-button";
 import { ReactComponent as CloseIcon } from "./assets/icons/close.svg";
 import { BrowserRouter } from "react-router-dom";
+import Map from "./components/map/map";
 export default function App() {
   const resources: ResourcesState = useSelector(
     (state: RootState) => state.resources
@@ -113,6 +114,7 @@ export default function App() {
       <div>
         <h2>Current Housing: {resources.housing}</h2>
       </div>
+      <Map />
     </div>
   );
 }

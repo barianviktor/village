@@ -26,4 +26,6 @@ export enum ActionType {
 
   SET_LANGUAGE = "set_language",
   SET_THEME = "set_theme",
+
+  GENERATE_FIELD = "generate_field",
 }

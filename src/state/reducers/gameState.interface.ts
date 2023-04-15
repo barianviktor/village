@@ -1,7 +1,12 @@
+import { Building } from "../../interfaces/Building";
+import { Field } from "../../interfaces/Field";
+
 export interface GameState {
   turn: number;
   turnLength: number;
   language: string;
-  theme: "light" | "dark";
-
+  theme: string;
+  fields: Field[];
+  fieldSize: number;
+  buildings: Building[];
 }

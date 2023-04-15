@@ -50,7 +50,7 @@ export default function Modal({
             onClick={handleClose}
           ></IconButton>
         </div>
-        {children}
+        <div className="modal-content">{children}</div>
       </div>
       <div className={`modal-backdrop`} onClick={() => handleClose()}></div>
     </div>

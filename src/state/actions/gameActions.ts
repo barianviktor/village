@@ -1,11 +1,16 @@
 import { Dispatch } from "react";
 import {
+  GenerateFieldAction,
   IncreaseGameTimeAction,
   SetGameLanguageAction,
   SetGameThemeAction,
   SetGameTimeAction,
 } from "./gameActions.interface";
 import { ActionType } from "../action-types";
+import { Field } from "../../interfaces/Field";
+import { useSelector } from "react-redux";
+import { GameState } from "../reducers/gameState.interface";
+import { RootState } from "../reducers";
 
 export const increaseGameTime = () => {
   return (dispatch: Dispatch<IncreaseGameTimeAction>) => {
@@ -33,11 +38,20 @@ export const setGameLanguage = (language: string) => {
   };
 };
 
-export const setGameTheme = (theme: "light" | "dark") => {
+export const setGameTheme = (theme: string) => {
   return (dispatch: Dispatch<SetGameThemeAction>) => {
     dispatch({
       type: ActionType.SET_THEME,
       payload: theme,
+    });
+  };
+};
+
+export const GenerateField = (field: Field) => {
+  return (dispatch: Dispatch<GenerateFieldAction>) => {
+    dispatch({
+      type: ActionType.GENERATE_FIELD,
+      payload: field,
     });
   };
 };

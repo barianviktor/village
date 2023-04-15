@@ -25,7 +25,6 @@ export default function HackerEffect({ title }: HackerEffectProps) {
       iterations += 1 / 3;
     }, 30);
   };
-  console.log(effectedTitle);
   return (
     <h1 onMouseOver={renderEffect} data-value={effectedTitle}>
       {effectedTitle}

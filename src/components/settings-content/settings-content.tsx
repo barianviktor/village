@@ -3,10 +3,17 @@ import "./settings-content.scss";
 import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "../../state/reducers";
 import { GameState } from "../../state/reducers/gameState.interface";
-import RippleEffect from "../shared/RippleEffect/RippleEffect";
 import { bindActionCreators } from "redux";
 import * as GameActions from "../../state/actions/gameActions";
 import GridList from "../shared/grid-list/grid-list";
+
+import { ReactComponent as LightIcon } from "../../assets/icons/light_theme.svg";
+import { ReactComponent as DarkIcon } from "../../assets/icons/dark_theme.svg";
+import { ReactComponent as SystemIcon } from "../../assets/icons/system_theme.svg";
+import SegmentedButton, {
+  SegmentedButtonItem,
+} from "../shared/segmented-button/segmented-button";
+
 export interface GridItem {
   id: string;
   title: string;
@@ -15,14 +22,39 @@ export interface GridItem {
 export default function SettingsContent() {
   const languagesMock: GridItem[] = [
     {
-      title: "English",
-      id: "us",
-      subTitle: "United States",
+      title: "العربية",
+      id: "ar",
+      subTitle: "Saudi Arabia",
+    },
+    {
+      title: "Dansk",
+      id: "da",
+      subTitle: "Denmark",
     },
     {
       title: "Deutsch",
       id: "de",
       subTitle: "Germany",
+    },
+    {
+      title: "English (Australia)",
+      id: "en-au",
+      subTitle: "Australia",
+    },
+    {
+      title: "English (Canada)",
+      id: "en-ca",
+      subTitle: "Canada",
+    },
+    {
+      title: "English (United Kingdom)",
+      id: "en-gb",
+      subTitle: "United Kingdom",
+    },
+    {
+      title: "English (United States)",
+      id: "en-us",
+      subTitle: "United States",
     },
     {
       title: "Español",
@@ -35,14 +67,29 @@ export default function SettingsContent() {
       subTitle: "France",
     },
     {
+      title: "Magyar",
+      id: "hu",
+      subTitle: "Hungary",
+    },
+    {
       title: "Italiano",
       id: "it",
       subTitle: "Italy",
     },
     {
+      title: "日本語",
+      id: "ja",
+      subTitle: "Japan",
+    },
+    {
       title: "Nederlands",
       id: "nl",
       subTitle: "Netherlands",
+    },
+    {
+      title: "Norsk",
+      id: "no",
+      subTitle: "Norway",
     },
     {
       title: "Polski",
@@ -60,6 +107,16 @@ export default function SettingsContent() {
       subTitle: "Russia",
     },
     {
+      title: "Suomi",
+      id: "fi",
+      subTitle: "Finland",
+    },
+    {
+      title: "Svenska",
+      id: "sv",
+      subTitle: "Sweden",
+    },
+    {
       title: "Türkçe",
       id: "tr",
       subTitle: "Turkey",
@@ -69,21 +126,43 @@ export default function SettingsContent() {
       id: "zh",
       subTitle: "China",
     },
+  ];
+  const themeMock: SegmentedButtonItem[] = [
     {
-      title: "日本語",
-      id: "ja",
-      subTitle: "Japan",
+      id: "light",
+      children: (
+        <>
+          <LightIcon></LightIcon>
+          <span>Light</span>
+        </>
+      ),
     },
     {
-      title: "한국어",
-      id: "ko",
-      subTitle: "Korea",
+      id: "system",
+      children: (
+        <>
+          <SystemIcon></SystemIcon>
+          <span>System</span>
+        </>
+      ),
+    },
+    {
+      id: "dark",
+      children: (
+        <>
+          <DarkIcon></DarkIcon>
+          <span>Dark</span>
+        </>
+      ),
     },
   ];
   const [languages, setLanguages] = React.useState<GridItem[]>([]);
   const game: GameState = useSelector((state: RootState) => state.game);
   const dispatch = useDispatch();
-  const { setGameLanguage } = bindActionCreators(GameActions, dispatch);
+  const { setGameLanguage, setGameTheme } = bindActionCreators(
+    GameActions,
+    dispatch
+  );
 
   const [loading, setLoading] = React.useState(true);
   useEffect(() => {
@@ -96,15 +175,30 @@ export default function SettingsContent() {
   const onLanguageSelect = (code: string) => {
     setGameLanguage(code);
   };
+  const onThemeChange = (theme: string) => {
+    console.log(theme);
+    setGameTheme(theme);
+  };
 
   return (
     <div>
-      <GridList
-        data={languages}
-        title="Languages"
-        selectedId={game.language}
-        onElementClick={onLanguageSelect}
-      />
+      <h1>Settings</h1>
+      <div className="settings-item">
+        <h2>Theme</h2>
+        <SegmentedButton
+          selectedItem={game.theme}
+          items={themeMock}
+          onChange={onThemeChange}
+        />
+      </div>
+      <div className="settings-item">
+        <h2>Languages</h2>
+        <GridList
+          data={languages}
+          selectedId={game.language}
+          onElementClick={onLanguageSelect}
+        />
+      </div>
     </div>
   );
 }

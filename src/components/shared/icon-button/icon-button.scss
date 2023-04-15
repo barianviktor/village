@@ -10,10 +10,7 @@ $transition-easing: ease-in-out;
   &:hover {
     background-color: rgba(0, 0, 0, 0.1);
   }
-  svg {
-    height: 25px;
-    width: 25px;
-  }
+
   display: inline-flex;
   align-items: center;
   justify-content: center;
