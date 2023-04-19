@@ -10,8 +10,8 @@ export interface Area {
 export enum AreaType {
   grass = "GRASS",
   water = "WATER",
-  rock = "ROCK",
-  tree = "TREE",
+  mountain = "MOUNTAIN",
+  forest = "FOREST",
   stoneMine = "STONE_MINE",
   fish = "FISH",
   berry = "BERRY",

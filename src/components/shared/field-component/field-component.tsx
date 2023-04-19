@@ -6,19 +6,23 @@ import { Area } from "../../../interfaces/Area";
 
 export interface FieldComponentProps {
   field: Field;
+  fieldSize: number;
 }
-export default function FieldComponent({ field }: FieldComponentProps) {
+export default function FieldComponent({
+  field,
+  fieldSize,
+}: FieldComponentProps) {
   return (
-    <div className="field">
-      {field.areas.map((areas: Area[], index: number) => {
+    <div
+      className="field"
+      style={{
+        gridTemplateColumns: `repeat(${fieldSize}, 1fr)`,
+        gridTemplateRows: `repeat(${fieldSize}, 1fr)`,
+      }}
+    >
+      {field.areas.map((area: Area) => {
         return (
-          <div key={"area-row-" + index} className="area-row">
-            {areas.map((area: Area) => {
-              return (
-                <AreaComponent key={"area-" + area.x + area.y} area={area} />
-              );
-            })}
-          </div>
+          <AreaComponent key={"area-" + area.x + "-" + area.y} area={area} />
         );
       })}
     </div>

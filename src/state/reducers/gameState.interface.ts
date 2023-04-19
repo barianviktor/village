@@ -8,5 +8,7 @@ export interface GameState {
   theme: string;
   fields: Field[];
   fieldSize: number;
-  buildings: Building[];
+  buildings: {
+    [key: string]: Building;
+  };
 }

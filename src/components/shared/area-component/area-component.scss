@@ -2,12 +2,22 @@
   width: 50px;
   height: 50px;
   opacity: 0.9;
+  position: relative;
   &:hover {
     opacity: 1;
   }
   &-type {
     &-GRASS {
       background-color: #9bcc50;
+    }
+    &-WATER {
+      background-color: #4592c4;
+    }
+    &-MOUNTAIN {
+      background-color: #424242;
+    }
+    &-FOREST {
+      background-color: #2f6627;
     }
   }
 }

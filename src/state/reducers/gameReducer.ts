@@ -9,9 +9,9 @@ const initialState: GameState = {
   language: "hu",
   theme: "light",
   fields: [],
-  fieldSize: 10,
-  buildings: [
-    {
+  fieldSize: 21,
+  buildings: {
+    townHall: {
       id: "town-hall",
       name: "Town Hall",
       description: "The center of governance and administration in the town.",
@@ -47,7 +47,7 @@ const initialState: GameState = {
       currentLevel: 1,
       canBuildOn: AreaType.grass,
     },
-    {
+    farm: {
       id: "farm",
       name: "Farm",
       description: "A place to grow crops and provide food for the town.",
@@ -76,7 +76,7 @@ const initialState: GameState = {
       currentLevel: 1,
       canBuildOn: AreaType.grass,
     },
-    {
+    lumberMill: {
       id: "lumber-mill",
       name: "Lumber Mill",
       description:
@@ -105,7 +105,7 @@ const initialState: GameState = {
       currentLevel: 1,
       canBuildOn: AreaType.lumber,
     },
-    {
+    stoneMine: {
       id: "stone-mine",
       name: "Stone Mine",
       description:
@@ -132,7 +132,7 @@ const initialState: GameState = {
       currentLevel: 1,
       canBuildOn: AreaType.stoneMine,
     },
-    {
+    house: {
       id: "house",
       name: "House",
       description: "A small dwelling for a family or a few individuals.",
@@ -160,7 +160,7 @@ const initialState: GameState = {
       currentLevel: 1,
       canBuildOn: AreaType.grass,
     },
-  ],
+  },
 };
 
 const resourcesReducer = (
